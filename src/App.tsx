@@ -1,39 +1,21 @@
-import { createSignal } from "solid-js";
-import { invoke } from "@tauri-apps/api/core";
+import { Router, Route } from "@solidjs/router";
+import { NotesLayout } from "./layouts/notes";
+import { Notes } from "./routes/notes";
+import { Note } from "./routes/note";
 
-function App() {
-	const [greetMsg, setGreetMsg] = createSignal("");
-	const [name, setName] = createSignal("");
+// example of how to invoke a rust function
+// async function greet() {
+// 	// Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
+// 	setGreetMsg(await invoke("greet", { name: name() }));
+// }
 
-	async function greet() {
-		// Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-		setGreetMsg(await invoke("greet", { name: name() }));
-	}
-
+export const App = () => {
 	return (
-		<div class="container">
-			<h1 class="text-3xl font-bold underline">Welcome to Tauri!</h1>
-
-			<p>Click on the Tauri, Vite, and Solid logos to learn more.</p>
-
-			<form
-				class="row"
-				onSubmit={(e) => {
-					e.preventDefault();
-					greet();
-				}}
-			>
-				<input
-					id="greet-input"
-					onChange={(e) => setName(e.currentTarget.value)}
-					placeholder="Enter a name..."
-				/>
-				<button type="submit">Greet</button>
-			</form>
-
-			<p>{greetMsg()}</p>
-		</div>
+		<Router>
+			<Route path="/notes" component={NotesLayout}>
+				<Route path="/" component={Notes} />
+				<Route path="/:slug" component={Note} />
+			</Route>
+		</Router>
 	);
-}
-
-export default App;
+};

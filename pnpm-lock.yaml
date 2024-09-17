@@ -8,21 +8,24 @@ importers:
 
   .:
     dependencies:
+      '@solidjs/router':
+        specifier: ^0.14.5
+        version: 0.14.5(solid-js@1.8.22)
       '@tauri-apps/api':
-        specifier: '>=2.0.0-rc.0'
+        specifier: 2.0.0-rc.5
         version: 2.0.0-rc.5
       '@tauri-apps/plugin-shell':
-        specifier: '>=2.0.0-rc.0'
+        specifier: 2.0.0-rc.1
         version: 2.0.0-rc.1
       solid-js:
-        specifier: ^1.7.8
+        specifier: ^1.8.22
         version: 1.8.22
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.1
         version: 1.9.1
       '@tauri-apps/cli':
-        specifier: '>=2.0.0-rc.0'
+        specifier: 2.0.0-rc.16
         version: 2.0.0-rc.16
       autoprefixer:
         specifier: ^10.4.20
@@ -30,23 +33,20 @@ importers:
       cssnano:
         specifier: ^7.0.6
         version: 7.0.6(postcss@8.4.47)
-      globals:
-        specifier: ^15.9.0
-        version: 15.9.0
       postcss:
         specifier: ^8.4.47
         version: 8.4.47
       tailwindcss:
-        specifier: ^3.4.11
-        version: 3.4.11
+        specifier: ^3.4.12
+        version: 3.4.12
       typescript:
-        specifier: ^5.2.2
+        specifier: ^5.6.2
         version: 5.6.2
       vite:
-        specifier: ^5.3.1
+        specifier: ^5.4.6
         version: 5.4.6
       vite-plugin-solid:
-        specifier: ^2.8.0
+        specifier: ^2.10.2
         version: 2.10.2(solid-js@1.8.22)(vite@5.4.6)
 
 packages:
@@ -453,6 +453,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@solidjs/router@0.14.5':
+    resolution: {integrity: sha512-J8ZMntnkDvNCSO9n4HyhlQlGdxYa1mandQLt5LMd0YiWAXGlYzjj+bB+OVtzsH1woWfoEJlVnBnGkMpf2lY/ig==}
+    peerDependencies:
+      solid-js: ^1.8.6
+
   '@tauri-apps/api@2.0.0-rc.5':
     resolution: {integrity: sha512-JWs69pE9NsQdcqTpEVBepAZ08+jgQWuthIiTiaWRq/YlCLgnqq0KfC9sDem55uJ0YpgsytZuyj+m6b6q8oiD2g==}
 
@@ -814,10 +819,6 @@ packages:
   globals@11.12.0:
     resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
     engines: {node: '>=4'}
-
-  globals@15.9.0:
-    resolution: {integrity: sha512-SmSKyLLKFbSr6rptvP8izbyxJL4ILwqO9Jg23UA0sDlGlu58V59D1//I3vlc0KJphVdUR7vMjHIplYnzBxorQA==}
-    engines: {node: '>=18'}
 
   has-flag@3.0.0:
     resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
@@ -1299,8 +1300,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  tailwindcss@3.4.11:
-    resolution: {integrity: sha512-qhEuBcLemjSJk5ajccN9xJFtM/h0AVCPaA6C92jNP+M2J8kX+eMJHI7R2HFKUvvAsMpcfLILMCFYSeDwpMmlUg==}
+  tailwindcss@3.4.12:
+    resolution: {integrity: sha512-Htf/gHj2+soPb9UayUNci/Ja3d8pTmu9ONTfh4QY8r3MATTZOzmv6UYWF7ZwikEIC8okpfqmGqrmDehua8mF8w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -1734,6 +1735,10 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.21.3':
     optional: true
 
+  '@solidjs/router@0.14.5(solid-js@1.8.22)':
+    dependencies:
+      solid-js: 1.8.22
+
   '@tauri-apps/api@2.0.0-rc.5': {}
 
   '@tauri-apps/cli-darwin-arm64@2.0.0-rc.16':
@@ -2121,8 +2126,6 @@ snapshots:
       path-scurry: 1.11.1
 
   globals@11.12.0: {}
-
-  globals@15.9.0: {}
 
   has-flag@3.0.0: {}
 
@@ -2563,7 +2566,7 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.1.0
 
-  tailwindcss@3.4.11:
+  tailwindcss@3.4.12:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
