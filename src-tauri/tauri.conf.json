@@ -12,9 +12,10 @@
   "app": {
     "windows": [
       {
-        "title": "save-notes",
-        "width": 800,
-        "height": 600
+        "title": "Save Notes",
+        "width": 1200,
+        "height": 800,
+        "url": "/notes"
       }
     ],
     "security": {

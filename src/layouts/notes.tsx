@@ -7,33 +7,7 @@ import {
 	Switch,
 	type ParentComponent,
 } from "solid-js";
-
-const fetchNotes = async () => {
-	const notes = await new Promise((resolve) => {
-		setTimeout(() => {
-			resolve([
-				{
-					slug: "note-1",
-					title: "Note 1",
-				},
-				{
-					slug: "note-2",
-					title: "Note 2",
-				},
-				{
-					slug: "note-3",
-					title: "Note 3",
-				},
-				{
-					slug: "note-4",
-					title: "Note 4",
-				},
-			]);
-		}, 1000);
-	});
-
-	return notes;
-};
+import { fetchNotes } from "../lib/notes";
 
 export const NotesLayout: ParentComponent = (props) => {
 	const [notes] = createResource(fetchNotes);
